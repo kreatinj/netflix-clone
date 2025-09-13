@@ -1,5 +1,7 @@
 main {
     padding: 72px 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero {}
@@ -15,6 +17,7 @@ main {
 .category.rank li.card a {
     display: block;
     width: 100%;
+    height: 200px;
     position: relative;
 }
 
