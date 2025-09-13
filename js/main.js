@@ -137,7 +137,7 @@ top10Movies.forEach((movie) => {
 
   const itemImg = document.createElement('img');
   itemImg.className = 'item';
-  itemImg.src = `assets/main/series/${movie.rank}.png`;
+  itemImg.src = `assets/main/movies/${movie.rank}.png`;
   itemImg.alt = movie.title;
 
   link.appendChild(rankImg);
