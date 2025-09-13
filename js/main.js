@@ -25,6 +25,33 @@ const top10Series = [
   },
 ];
 
+const newContents = [
+  {
+    order: 1,
+    title: '은중과 상연',
+  },
+  {
+    order: 2,
+    title: '야당',
+  },
+  {
+    order: 3,
+    title: '그림형제',
+  },
+  {
+    order: 4,
+    title: '크레이븐: 더 헌터',
+  },
+  {
+    order: 5,
+    title: '연애 실험: 블라인드 러브 - 프랑스편',
+  },
+  {
+    order: 6,
+    title: '말뫼 사람 절반은 나를 차버린 남자',
+  },
+];
+
 const top10Movies = [
   {
     rank: 1,
@@ -52,7 +79,7 @@ const top10Movies = [
   },
 ];
 
-const topSeries = document.getElementById('top-series').querySelector('ol');
+const topSeriesElement = document.getElementById('top-series').querySelector('ol');
 
 top10Series.forEach((series) => {
   const listItem = document.createElement('li');
@@ -74,10 +101,27 @@ top10Series.forEach((series) => {
   link.appendChild(rankImg);
   link.appendChild(itemImg);
   listItem.appendChild(link);
-  topSeries.appendChild(listItem);
+  topSeriesElement.appendChild(listItem);
 });
 
-const topMovies = document.getElementById('top-movies').querySelector('ol');
+const newContentsElement = document.getElementById('new-contents').querySelector('ul');
+
+newContents.forEach((content) => {
+  const listItem = document.createElement('li');
+
+  const link = document.createElement('a');
+  link.href = '#';
+
+  const itemImg = document.createElement('img');
+  itemImg.src = `assets/main/new/${content.order}.png`;
+  itemImg.alt = content.title;
+
+  link.appendChild(itemImg);
+  listItem.appendChild(link);
+  newContentsElement.appendChild(listItem);
+});
+
+const topMoviesElement = document.getElementById('top-movies').querySelector('ol');
 
 top10Movies.forEach((movie) => {
   const listItem = document.createElement('li');
@@ -99,5 +143,5 @@ top10Movies.forEach((movie) => {
   link.appendChild(rankImg);
   link.appendChild(itemImg);
   listItem.appendChild(link);
-  topMovies.appendChild(listItem);
+  topMoviesElement.appendChild(listItem);
 });
