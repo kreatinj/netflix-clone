@@ -1,10 +1,5 @@
-body {
-    background-color: var(--dark-color);
-    color: var(--text-color);
-    width: 1440px;
-    padding: 0 var(--page-padding);
-    margin: 0 auto;
-    box-sizing: border-box;
+main {
+    padding: 72px 0;
 }
 
 .hero {}
