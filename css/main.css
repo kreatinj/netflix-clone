@@ -4,4 +4,32 @@ main {
 
 .hero {}
 
-.category {}
+.category ol {
+    display: flex;
+}
+
+.category li.card {
+    width: 20%;
+}
+
+.category.rank li.card a {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.category.rank li.card a img {
+    position: absolute;
+    width: 50%;
+    aspect-ratio: 284/398;
+}
+
+.category.rank li.card a img.rank {
+    left: 0;
+    right: auto;
+}
+
+.category.rank li.card a img.item {
+    right: 0;
+    left: auto;
+}
