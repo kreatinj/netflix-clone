@@ -15,6 +15,65 @@ main {
     aspect-ratio: 16/9;
 }
 
+.hero .meta {
+    position: absolute;
+    top: 0;
+    bottom: 36%;
+    left: 4%;
+    width: 36%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.hero .meta .buttons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.hero .meta button {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    background-color: white;
+    color: black;
+    border: 0px;
+    border-radius: 4px;
+    padding: 0.8rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.hero .meta button:hover {
+    opacity: 0.8;
+}
+
+.hero .meta .play-button {
+    background-color: white;
+    color: black;
+}
+
+.hero .meta .more-info-button {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+}
+
+.hero .trailer-vignette {
+    background: linear-gradient(77deg,rgba(0,0,0,.6),transparent 85%);
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    right: 26.09%;
+    top: 0;
+    transition: opacity .5s;
+}
+
 .hero .hero-vignette {
     position: absolute;
     background-color: transparent;
