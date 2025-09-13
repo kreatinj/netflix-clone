@@ -19,6 +19,37 @@ const top10Series = [
     rank: 5,
     title: '은중과 상연',
   },
+  {
+    rank: 6,
+    title: '한탕 프로젝트 마이턴',
+  },
+];
+
+const top10Movies = [
+  {
+    rank: 1,
+    title: '야당',
+  },
+  {
+    rank: 2,
+    title: '크레이븐: 더 헌터',
+  },
+  {
+    rank: 3,
+    title: '케이팝 데몬 헌터스',
+  },
+  {
+    rank: 4,
+    title: '고백의 역사',
+  },
+  {
+    rank: 5,
+    title: '케이팝 데몬 헌터스 싱어롱',
+  },
+  {
+    rank: 6,
+    title: '브로큰',
+  },
 ];
 
 const topSeries = document.getElementById('top-series').querySelector('ol');
@@ -32,12 +63,12 @@ top10Series.forEach((series) => {
 
   const rankImg = document.createElement('img');
   rankImg.className = 'rank';
-  rankImg.src = `assets/main/rank${series.rank}.svg`;
+  rankImg.src = `assets/main/rank/${series.rank}.svg`;
   rankImg.alt = `rank ${series.rank}`;
 
   const itemImg = document.createElement('img');
   itemImg.className = 'item';
-  itemImg.src = `assets/main/series-rank${series.rank}.png`;
+  itemImg.src = `assets/main/series/${series.rank}.png`;
   itemImg.alt = series.title;
 
   link.appendChild(rankImg);
@@ -48,7 +79,7 @@ top10Series.forEach((series) => {
 
 const topMovies = document.getElementById('top-movies').querySelector('ol');
 
-top10Series.forEach((movie) => {
+top10Movies.forEach((movie) => {
   const listItem = document.createElement('li');
   listItem.className = 'card';
 
@@ -57,12 +88,12 @@ top10Series.forEach((movie) => {
 
   const rankImg = document.createElement('img');
   rankImg.className = 'rank';
-  rankImg.src = `assets/main/rank${movie.rank}.svg`;
+  rankImg.src = `assets/main/rank/${movie.rank}.svg`;
   rankImg.alt = `rank ${movie.rank}`;
 
   const itemImg = document.createElement('img');
   itemImg.className = 'item';
-  itemImg.src = `assets/main/series-rank${movie.rank}.png`;
+  itemImg.src = `assets/main/series/${movie.rank}.png`;
   itemImg.alt = movie.title;
 
   link.appendChild(rankImg);
