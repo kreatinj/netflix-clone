@@ -1,4 +1,5 @@
 :root {
+    --page-padding: 40px;
     --primary-color: #e50914;
     --dark-color: #141414;
     --text-color: #e5e5e5;
@@ -9,7 +10,9 @@ body {
     background-color: var(--dark-color);
     color: var(--text-color);
     width: 1440px;
+    padding: 0 var(--page-padding);
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .navbar {
@@ -18,11 +21,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 60px;
     position: fixed;
     top: 0;
-    width: 100%;
-    box-sizing: border-box;
+    left: var(--page-padding);
+    right: var(--page-padding);
 }
 
 .nav-left {
