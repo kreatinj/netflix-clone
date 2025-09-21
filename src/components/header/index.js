@@ -1,4 +1,5 @@
 import { loadSvgElement } from "../../js/core.js";
+import { Notifications } from "./Notifications.js";
 
 const netflixLogo = loadSvgElement("assets/header/netflix-logo.svg");
 const searchIcon = loadSvgElement("assets/header/search-icon.svg");
@@ -11,10 +12,11 @@ const notificationIcon = loadSvgElement("assets/header/notification-icon.svg");
  * @returns {Promise<string>}
  */
 export async function Header() {
-  const [logo, search, notification] = await Promise.all([
+  const [logo, search, notification, notifications] = await Promise.all([
     netflixLogo,
     searchIcon,
     notificationIcon,
+    Notifications(),
   ]);
 
   return `
@@ -39,8 +41,9 @@ export async function Header() {
       <li>
         <a href="#">${search}</a>
       </li>
-      <li>
+      <li class="notification">
         <a href="#">${notification}</a>
+        ${notifications}
       </li>
       <li>
         <a href="#"><img src="assets/header/profile-icon.png" alt="User Profile" /></a>

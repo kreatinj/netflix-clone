@@ -13,3 +13,13 @@ document.body.innerHTML = `
   ${main}
   ${footer}
 `.trim();
+
+document.querySelector(".notification").addEventListener("mouseenter", (e) => {
+  const menu = e.target.querySelector(".menu");
+  menu.style.visibility = "visible";
+});
+
+document.querySelector(".notification").addEventListener("mouseleave", (e) => {
+  const menu = e.target.querySelector(".menu");
+  menu.style.visibility = "hidden";
+});
