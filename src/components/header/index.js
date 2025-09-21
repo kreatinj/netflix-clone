@@ -1,5 +1,5 @@
 import { loadSvgElement } from "../../js/core.js";
-import { Notifications } from "./Notifications.js";
+import { NotificationsMenu } from "./NotificationsMenu.js";
 
 const netflixLogo = loadSvgElement("assets/header/netflix-logo.svg");
 const searchIcon = loadSvgElement("assets/header/search-icon.svg");
@@ -16,7 +16,7 @@ export async function Header() {
     netflixLogo,
     searchIcon,
     notificationIcon,
-    Notifications(),
+    NotificationsMenu(),
   ]);
 
   return `

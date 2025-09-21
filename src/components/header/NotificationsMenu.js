@@ -8,11 +8,11 @@ const notificationsPromise = loadJsonData("data/notifications.json");
 
 /**
  * @async
- * @function Notification
+ * @function NotificationsMenu
  *
  * @returns {Promise<string>}
  */
-export async function Notifications() {
+export async function NotificationsMenu() {
   const notifications = await notificationsPromise;
 
   return `
