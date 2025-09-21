@@ -1,5 +1,6 @@
 import { loadSvgElement } from "../../js/core.js";
 import { NotificationsMenu } from "./NotificationsMenu.js";
+import { ProfileMenu } from "./ProfileMenu.js";
 
 const netflixLogo = loadSvgElement("assets/header/netflix-logo.svg");
 const searchIcon = loadSvgElement("assets/header/search-icon.svg");
@@ -45,8 +46,9 @@ export async function Header() {
         <a href="#">${notification}</a>
         ${notifications}
       </li>
-      <li>
+      <li class="profile">
         <a href="#"><img src="assets/header/profile-icon.png" alt="User Profile" /></a>
+        ${ProfileMenu()}
       </li>
     </ul>
   </nav>
