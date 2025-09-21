@@ -1,17 +1,29 @@
+import { loadSvgElement } from "../../js/core.js";
+
+const netflixLogo = loadSvgElement("assets/header/netflix-logo.svg");
+const searchIcon = loadSvgElement("assets/header/search-icon.svg");
+const notificationIcon = loadSvgElement("assets/header/notification-icon.svg");
+
 /**
  * @async
  * @function Header
  *
- * @returns {string}
+ * @returns {Promise<string>}
  */
-export function Header() {
+export async function Header() {
+  const [logo, search, notification] = await Promise.all([
+    netflixLogo,
+    searchIcon,
+    notificationIcon,
+  ]);
+
   return `
 <header>
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-left">
       <div class="logo">
         <a href="#">
-          <img src="assets/header/netflix-logo.svg" alt="Netflix Logo" />
+          ${logo}
         </a>
       </div>
       <ul class="nav-tabs">
@@ -25,10 +37,10 @@ export function Header() {
     </div>
     <ul class="nav-right">
       <li>
-        <a href="#"><img src="assets/header/search-icon.svg" alt="Search" /></a>
+        <a href="#">${search}</a>
       </li>
       <li>
-        <a href="#"><img src="assets/header/notification-icon.svg" alt="Notifications" /></a>
+        <a href="#">${notification}</a>
       </li>
       <li>
         <a href="#"><img src="assets/header/profile-icon.png" alt="User Profile" /></a>

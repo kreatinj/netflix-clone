@@ -1,24 +1,38 @@
+import { loadSvgElement } from "../../js/core.js";
+
+const facebookIcon = loadSvgElement("assets/footer/facebook.svg");
+const instagramIcon = loadSvgElement("assets/footer/instagram.svg");
+const twitterIcon = loadSvgElement("assets/footer/twitter.svg");
+const youtubeIcon = loadSvgElement("assets/footer/youtube.svg");
+
 /**
  * @async
  * @function Footer
  *
- * @returns {string}
+ * @returns {Promise<string>}
  */
-export function Footer() {
+export async function Footer() {
+  const [facebook, instagram, twitter, youtube] = await Promise.all([
+    facebookIcon,
+    instagramIcon,
+    twitterIcon,
+    youtubeIcon,
+  ]);
+
   return `
 <footer>
   <ul class="social-media">
     <li>
-      <a href="#" target="_blank" aria-label="facebook"><img src="assets/footer/facebook.svg" alt="Facebook" /></a>
+      <a href="#" target="_blank" aria-label="facebook">${facebook}</a>
     </li>
     <li>
-      <a href="#" target="_blank" aria-label="instagram"><img src="assets/footer/instagram.svg" alt="Instagram" /></a>
+      <a href="#" target="_blank" aria-label="instagram">${instagram}</a>
     </li>
     <li>
-      <a href="#" target="_blank" aria-label="twitter"><img src="assets/footer/twitter.svg" alt="Twitter" /></a>
+      <a href="#" target="_blank" aria-label="twitter">${twitter}</a>
     </li>
     <li>
-      <a href="#" target="_blank" aria-label="youtube"><img src="assets/footer/youtube.svg" alt="YouTube" /></a>
+      <a href="#" target="_blank" aria-label="youtube">${youtube}</a>
     </li>
   </ul>
   <nav aria-label="Footer navigation">

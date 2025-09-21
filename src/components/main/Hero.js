@@ -1,9 +1,17 @@
+import { loadSvgElement } from "../../js/core.js";
+
+const playIcon = loadSvgElement("assets/main/play.svg");
+const infoIcon = loadSvgElement("assets/main/info.svg");
+
 /**
+ * @async
  * @function Hero
  *
- * @returns {string}
+ * @returns {Promise<string>}
  */
-export function Hero() {
+export async function Hero() {
+  const [play, info] = await Promise.all([playIcon, infoIcon]);
+
   return `
 <section class="hero">
   <div class="background"></div>
@@ -16,11 +24,11 @@ export function Hero() {
     </div>
     <div class="buttons">
       <button class="play-button">
-        <img src="assets/main/play.svg" alt="Play" />
+        ${play}
         재생
       </button>
       <button class="more-info-button">
-        <img src="assets/main/info.svg" alt="More Info" />
+        ${info}
         상세 정보
       </button>
     </div>

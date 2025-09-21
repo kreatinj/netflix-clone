@@ -13,10 +13,11 @@ import { Categories } from "./Categories.js";
  * @returns {Promise<string>}
  */
 export async function Main() {
+  const [hero, categories] = await Promise.all([Hero(), Categories()]);
   return `
 <main>
-  ${Hero()}
-  ${await Categories()}
+  ${hero}
+  ${categories}
 </main>
 `.trim();
 }
