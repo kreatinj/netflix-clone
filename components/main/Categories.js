@@ -1,5 +1,19 @@
+import { loadJsonData } from "../../js/core.js";
 import { RankCard } from "./RankCard.js";
 import { RegularCard } from "./RegularCard.js";
+
+/**
+ * @type {Promise<import("./RankCard.js").RankItem[]>}
+ */
+const top10SeriesPromise = loadJsonData("data/top10-series.json");
+/**
+ * @type {Promise<import("./RegularCard.js").Item[]>}
+ */
+const newContentsPromise = loadJsonData("data/new-contents.json");
+/**
+ * @type {Promise<import("./RankCard.js").RankItem[]>}
+ */
+const top10MoviesPromise = loadJsonData("data/top10-movies.json");
 
 /**
  * @typedef {import("./RankCard.js").RankItem} RankItem
@@ -10,17 +24,9 @@ import { RegularCard } from "./RegularCard.js";
  * @async
  * @function Categories
  *
- * @param {Promise<RankItem[]>} top10SeriesPromise
- * @param {Promise<Item[]>} newContentsPromise
- * @param {Promise<RankItem[]>} top10MoviesPromise
- *
  * @returns {Promise<string>}
  */
-export async function Categories(
-  top10SeriesPromise,
-  newContentsPromise,
-  top10MoviesPromise
-) {
+export async function Categories() {
   const [top10Series, newContents, top10Movies] = await Promise.all([
     top10SeriesPromise,
     newContentsPromise,
