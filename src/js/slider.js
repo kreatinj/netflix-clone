@@ -4,6 +4,10 @@ const slideStates = new WeakMap();
  * @param {HTMLElement} slider
  */
 export function handleSlider(slider) {
+  if (!slider) {
+    return;
+  }
+
   const list = slider.querySelector("ol, ul");
   const items = Array.from(list.querySelectorAll("li"));
   const leftButton = slider.querySelector("button.left");
@@ -11,47 +15,43 @@ export function handleSlider(slider) {
   const pageIndicator = slider.parentElement.querySelector(".page-indicator");
 
   const itemsPerScreen = 5;
-  const totalPages = Math.ceil(items.length / itemsPerScreen);
-  let currentPage = 0;
+  const totalItems = items.length;
+  let currentItem = 0;
 
-  slideStates.set(slider, { currentPage: 0 });
-
-  function updateButtons() {
-    leftButton.disabled = currentPage === 0;
-    rightButton.disabled = currentPage === totalPages - 1;
-  }
+  slideStates.set(slider, { currentItem: 0 });
 
   function updatePageIndicator() {
     const indicators = Array.from(pageIndicator.querySelectorAll("span"));
     indicators.forEach((indicator, index) => {
-      indicator.classList.toggle("active", index === currentPage);
+      indicator.classList.toggle("active", index === currentItem);
     });
   }
 
   function slide() {
-    const offset = currentPage * itemsPerScreen * (items[0].offsetWidth);
+    const offset = currentItem * (items[0].offsetWidth + 10);
     list.style.transform = `translateX(-${offset}px)`;
   }
 
   leftButton.addEventListener("click", () => {
-    if (currentPage > 0) {
-      currentPage--;
-      slide();
-      updateButtons();
-      updatePageIndicator();
+    if (currentItem > 0) {
+      currentItem--;
+    } else {
+      currentItem = totalItems - itemsPerScreen;
     }
+    slide();
+    updatePageIndicator();
   });
 
   rightButton.addEventListener("click", () => {
-    if (currentPage < totalPages - 1) {
-      currentPage++;
-      slide();
-      updateButtons();
-      updatePageIndicator();
+    if (currentItem < totalItems - itemsPerScreen) {
+      currentItem++;
+    } else {
+      currentItem = 0;
     }
+    slide();
+    updatePageIndicator();
   });
 
   // Initialize
-  updateButtons();
   updatePageIndicator();
 }

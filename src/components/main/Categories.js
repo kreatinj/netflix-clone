@@ -28,13 +28,16 @@ export async function Categories() {
     top10MoviesPromise,
   ]);
 
-  return `
+  const createPageIndicators = (items) =>
+    Array.from({ length: items.length - 4 }, () => "<span></span>").join("");
+
+  return (
+    `
 <section class="categories">
   <section class="rank">
     <h2>오늘 대한민국의 TOP 10 시리즈</h2>
     <div class="page-indicator">
-      <span></span>
-      <span></span>
+      ${createPageIndicators(top10Series)}
     </div>
     <div class="slider">
       <button class="left" aria-label="왼쪽으로 이동">
@@ -43,7 +46,7 @@ export async function Categories() {
       <ol>
         ${top10Series.map((item) => RankCard(item, "series")).join("\n          ")}
       </ol>
-      <button class="right" aria-label="오른쪽으로 이동">
+      <button class="right" aria-label="왼쪽으로 이동">
         <b>></b>
       </button>
     </div>
@@ -51,8 +54,7 @@ export async function Categories() {
   <section class="regular">
     <h2>넷플릭스에 새로 올라온 콘텐츠</h2>
     <div class="page-indicator">
-      <span></span>
-      <span></span>
+      ${createPageIndicators(newContents)}
     </div>
     <div class="slider">
       <button class="left" aria-label="왼쪽으로 이동">
@@ -61,7 +63,7 @@ export async function Categories() {
       <ul>
         ${newContents.map((item) => RegularCard(item)).join("\n        ")}
       </ul>
-      <button class="right" aria-label="오른쪽으로 이동">
+      <button class="right" aria-label="왼쪽으로 이동">
         <b>></b>
       </button>
     </div>
@@ -69,8 +71,7 @@ export async function Categories() {
   <section class="rank">
     <h2>오늘 대한민국의 TOP 10 영화</h2>
     <div class="page-indicator">
-      <span></span>
-      <span></span>
+      ${createPageIndicators(top10Movies)}
     </div>
     <div class="slider">
       <button class="left" aria-label="왼쪽으로 이동">
@@ -79,12 +80,12 @@ export async function Categories() {
       <ol>
         ${top10Movies.map((item) => RankCard(item, "movies")).join("\n        ")}
       </ol>
-      <button class="right" aria-label="오른쪽으로 이동">
+      <button class="right" aria-label="왼쪽으로 이동">
         <b>></b>
       </button>
     </div>
   </section>
 </section>
 `
-    .trim();
+  ).trim();
 }
