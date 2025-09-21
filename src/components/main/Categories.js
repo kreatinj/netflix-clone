@@ -16,11 +16,6 @@ const newContentsPromise = loadJsonData("data/new-contents.json");
 const top10MoviesPromise = loadJsonData("data/top10-movies.json");
 
 /**
- * @typedef {import("./RankCard.js").RankItem} RankItem
- * @typedef {import("./RegularCard.js").Item} Item
- */
-
-/**
  * @async
  * @function Categories
  *
