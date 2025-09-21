@@ -116,6 +116,7 @@ main {
 
 .categories ol, .categories ul {
     display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .categories .rank a {
@@ -146,4 +147,21 @@ main {
     margin: 4px;
     aspect-ratio: 341/192;
     border-radius: 4px;
+}
+
+.page-indicator {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 var(--page-padding);
+  gap: 4px;
+}
+
+.page-indicator span {
+  width: 12px;
+  height: 2px;
+  background-color: #555;
+}
+
+.page-indicator span.active {
+  background-color: #fff;
 }

@@ -1,6 +1,7 @@
 import { Footer } from "./footer/index.js";
 import { Header } from "./header/index.js";
 import { Main } from "./main/index.js";
+import { handleSlider } from "../js/slider.js";
 
 const [header, main, footer] = await Promise.all([
   Header(),
@@ -13,6 +14,8 @@ document.body.innerHTML = `
   ${main}
   ${footer}
 `.trim();
+
+document.querySelectorAll(".slider").forEach(handleSlider);
 
 document.querySelector(".notification").addEventListener("mouseenter", (e) => {
   const menu = e.target.querySelector(".menu");

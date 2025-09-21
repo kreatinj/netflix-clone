@@ -32,6 +32,10 @@ export async function Categories() {
 <section class="categories">
   <section class="rank">
     <h2>오늘 대한민국의 TOP 10 시리즈</h2>
+    <div class="page-indicator">
+      <span></span>
+      <span></span>
+    </div>
     <div class="slider">
       <button class="left" aria-label="왼쪽으로 이동">
         <b><</b>
@@ -46,16 +50,41 @@ export async function Categories() {
   </section>
   <section class="regular">
     <h2>넷플릭스에 새로 올라온 콘텐츠</h2>
-    <ul>
-      ${newContents.map((item) => RegularCard(item)).join("\n        ")}
-    </ul>
+    <div class="page-indicator">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="slider">
+      <button class="left" aria-label="왼쪽으로 이동">
+        <b><</b>
+      </button>
+      <ul>
+        ${newContents.map((item) => RegularCard(item)).join("\n        ")}
+      </ul>
+      <button class="right" aria-label="오른쪽으로 이동">
+        <b>></b>
+      </button>
+    </div>
   </section>
   <section class="rank">
     <h2>오늘 대한민국의 TOP 10 영화</h2>
-    <ol>
-      ${top10Movies.map((item) => RankCard(item, "movies")).join("\n        ")}
-    </ol>
+    <div class="page-indicator">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="slider">
+      <button class="left" aria-label="왼쪽으로 이동">
+        <b><</b>
+      </button>
+      <ol>
+        ${top10Movies.map((item) => RankCard(item, "movies")).join("\n        ")}
+      </ol>
+      <button class="right" aria-label="오른쪽으로 이동">
+        <b>></b>
+      </button>
+    </div>
   </section>
 </section>
-`.trim();
+`
+    .trim();
 }
