@@ -90,12 +90,32 @@ main {
 .categories {
     z-index: 2;
     margin-top: -200px;
+}
+
+.categories h2 {
     padding: 0 var(--page-padding);
+}
+
+.categories .slider {
+    display: grid;
+    grid-template-columns: var(--page-padding) 1360px var(--page-padding);
+}
+
+.slider button {
+    z-index: 3;
+    background-color: rgba(20, 20, 20, 0.5);
+    border: none;
+    height: 100%;
+    color: #fff;
+    font-size: 2.5vw;
+}
+
+.slider button:hover {
+    background-color: rgba(20, 20, 20, 0.8);
 }
 
 .categories ol, .categories ul {
     display: flex;
-    overflow-y: scroll;
 }
 
 .categories .rank a {
@@ -122,7 +142,7 @@ main {
 }
 
 .categories .regular img {
-    width: 272px;
+    width: 264px;
     margin: 4px;
     aspect-ratio: 341/192;
     border-radius: 4px;
