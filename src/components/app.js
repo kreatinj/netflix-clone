@@ -1,6 +1,7 @@
 import { Footer } from "./footer/index.js";
 import { Header } from "./header/index.js";
 import { Main } from "./main/index.js";
+import { handleModal } from "../js/modal.js";
 import { handleSlider } from "../js/slider.js";
 
 const [header, main, footer] = await Promise.all([
@@ -15,24 +16,6 @@ document.body.innerHTML = `
   ${footer}
 `.trim();
 
+handleModal(document.querySelector(".notification"));
+handleModal(document.querySelector(".profile"));
 document.querySelectorAll(".slider").forEach(handleSlider);
-
-document.querySelector(".notification").addEventListener("mouseenter", (e) => {
-  const menu = e.target.querySelector(".menu");
-  menu.style.visibility = "visible";
-});
-
-document.querySelector(".notification").addEventListener("mouseleave", (e) => {
-  const menu = e.target.querySelector(".menu");
-  menu.style.visibility = "hidden";
-});
-
-document.querySelector(".profile").addEventListener("mouseenter", (e) => {
-  const menu = e.target.querySelector(".menu");
-  menu.style.visibility = "visible";
-});
-
-document.querySelector(".profile").addEventListener("mouseleave", (e) => {
-  const menu = e.target.querySelector(".menu");
-  menu.style.visibility = "hidden";
-});
