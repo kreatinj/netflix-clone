@@ -17,6 +17,8 @@ export function handleSlider(slider) {
   const itemsPerScreen = 5;
   const totalItems = items.length;
 
+  slideStates.set(slider, { currentItem: 0 });
+
   function updatePageIndicator() {
     const indicators = Array.from(pageIndicator.querySelectorAll("span"));
     const { currentItem = 0 } = slideStates.get(slider) || {};
@@ -51,10 +53,10 @@ export function handleSlider(slider) {
       currentItem += itemsPerScreen;
     } else {
       currentItem += totalItems % itemsPerScreen;
+      const clone = items.map((item) => item.cloneNode(true));
+      list.append(...clone);
     }
     slideStates.set(slider, { currentItem });
-    const clone = items.map((item) => item.cloneNode(true));
-    list.append(...clone);
     slide();
     updatePageIndicator();
   });
