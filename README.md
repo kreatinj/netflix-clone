@@ -9,7 +9,7 @@
   - [ ] css는 컴포넌트 별로 작성하여 import문으로 불러오기
   - [ ] 캐러셀 메모리 최적화하도록 로직 개선
 - [ ] 데이터를 json 파일로 관리
-  - [ ] fetch로 데이터 불러오기
+  - [x] fetch로 데이터 불러오기
   - [ ] 불러오는 동안 loading spinner 보여주기
     - [ ] loading spinner는 css로 구현
 - [ ] 좋아요 + 찜하기 기능 개발
