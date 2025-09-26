@@ -1,3 +1,5 @@
+import "./index.css";
+
 import facebookIcon from "/assets/footer/facebook.svg?raw";
 import instagramIcon from "/assets/footer/instagram.svg?raw";
 import twitterIcon from "/assets/footer/twitter.svg?raw";
@@ -5,7 +7,7 @@ import youtubeIcon from "/assets/footer/youtube.svg?raw";
 
 export default function Footer() {
   return `
-  <footer>
+  <footer class="footer">
     <ul class="social-media">
       <li>
         <a href="#" target="_blank" aria-label="facebook">${facebookIcon}</a>
