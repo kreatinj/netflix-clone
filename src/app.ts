@@ -1,3 +1,4 @@
+import "./global.css";
 import Footer from "~/components/footer/index.ts";
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
