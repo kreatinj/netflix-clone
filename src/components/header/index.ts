@@ -3,8 +3,11 @@ import searchIcon from "/assets/header/search-icon.svg?raw";
 import notificationIcon from "/assets/header/notification-icon.svg?raw";
 import profileIcon from "/assets/header/profile-icon.png";
 import Menu from "./menu";
+import Notifications from "./notifications";
 
 export default async function Header() {
+  const notifications = await Notifications();
+
   return `
   <header>
     <nav class="navbar" aria-label="Main navigation">
@@ -29,10 +32,7 @@ export default async function Header() {
         </li>
         <li class="notification">
           <a href="#">${notificationIcon}</a>
-          ${Menu({
-            // TODO
-            // children: notifications,
-          })}
+          ${Menu({ children: notifications })}
         </li>
         <li class="profile">
           <a href="#"><img src="${profileIcon}" alt="User Profile" /></a>
