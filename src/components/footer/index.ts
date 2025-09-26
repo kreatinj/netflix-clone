@@ -4,7 +4,7 @@ import twitterIcon from "/assets/footer/twitter.svg?raw";
 import youtubeIcon from "/assets/footer/youtube.svg?raw";
 
 export default function Footer() {
-    return `
+  return `
   <footer>
     <ul class="social-media">
       <li>
