@@ -1,18 +1,20 @@
 import "./global.css";
 import Footer from "~/components/footer";
 import Header from "~/components/header";
+import LoadingSpinner from "./components/loading-spinner";
 import Main from "~/components/main";
 import handleModal from "./events/handleModal";
 import handleSlider from "./events/handleSlider";
 
-const [header, main] = await Promise.all([Header(), Main()]);
+const appElement = document.querySelector<HTMLDivElement>('#app')!;
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    ${header}
-    ${main}
-    ${Footer()}
-  </div>
+appElement.innerHTML = LoadingSpinner();
+
+const [header, main] = await Promise.all([Header(), Main()]);
+appElement.innerHTML = `
+${header}
+${main}
+${Footer()}
 `;
 
 document.querySelectorAll(".modal-container").forEach(handleModal);
