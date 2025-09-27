@@ -1,3 +1,4 @@
+import "./index.css";
 import { loadJson } from '~/helpers/loadJson';
 import RankCard, { type RankItem } from './rank-card';
 import RegularCard, { type Item } from './regular-card';
