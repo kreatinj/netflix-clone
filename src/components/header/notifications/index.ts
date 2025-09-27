@@ -1,5 +1,5 @@
 import './index.css';
-import { loadJson } from '~/helpers/load-json';
+import { loadJson } from '~/helpers/loadJson';
 import Item from './item';
 
 const notificationsPromise = loadJson<{
