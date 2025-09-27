@@ -41,10 +41,6 @@
     height: 30px;
 }
 
-.notification {
-    position: relative;
-}
-
-.profile {
+.modal-container {
     position: relative;
 }

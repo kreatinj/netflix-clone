@@ -32,11 +32,11 @@ export default async function Header() {
         <li>
           <a href="#">${searchIcon}</a>
         </li>
-        <li class="notification">
+        <li class="modal-container">
           <a href="#">${notificationIcon}</a>
           ${Menu({ children: notifications })}
         </li>
-        <li class="profile">
+        <li class="modal-container">
           <a href="#"><img src="${profileIcon}" alt="User Profile" /></a>
           ${Menu({ children: Profile() })}
         </li>

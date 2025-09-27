@@ -10,6 +10,10 @@
     visibility: hidden;
 }
 
+.menu.active {
+    visibility: visible;
+}
+
 .topbar {
     height: 2px;
     background-color: #e5e5e5;
