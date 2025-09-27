@@ -11,7 +11,12 @@
     aspect-ratio: 284/398;
 }
 
-.rank-card img {
+.rank-card img.rank {
     left: 0;
     right: auto;
+}
+
+.rank-card img.thumbnail {
+    left: auto;
+    right: 0;
 }
