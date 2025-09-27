@@ -11,7 +11,6 @@ type Prop = {
 };
 
 export default function RankCard({ item, type }: Prop) {
-  // const rankImg = await import(`assets/main/rank/${item.rank}.svg?raw`);
   return `
 <li class="rank-card">
   <a href="#">
