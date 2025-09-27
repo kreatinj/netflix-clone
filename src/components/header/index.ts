@@ -5,6 +5,7 @@ import notificationIcon from "/assets/header/notification-icon.svg?raw";
 import profileIcon from "/assets/header/profile-icon.png";
 import Menu from "./menu";
 import Notifications from "./notifications";
+import Profile from "./profile";
 
 export default async function Header() {
   const notifications = await Notifications();
@@ -37,10 +38,7 @@ export default async function Header() {
         </li>
         <li class="profile">
           <a href="#"><img src="${profileIcon}" alt="User Profile" /></a>
-          ${Menu({
-            // TODO
-            // children: Profile(),
-          })}
+          ${Menu({ children: Profile() })}
         </li>
       </ul>
     </nav>
