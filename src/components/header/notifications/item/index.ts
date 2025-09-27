@@ -10,17 +10,17 @@ type Props = {
 export default function Item({ id, title, description, notifiedTime }: Props) {
   const img = `/assets/header/notifications/${id}.png`;
   return `
-    <li class="notification-item">
-      <a href="#">
-        <img src="${img}" alt="${title}" />
-      </a>
-      <a href="#">
-        <div>${title}</div>
-        <div>${description}</div>
-        <div>${age(notifiedTime)}</div>
-      </a>
-    </li>
-  `;
+  <li class="notification-item">
+    <a href="#">
+      <img src="${img}" alt="${title}" />
+    </a>
+    <a href="#">
+      <div>${title}</div>
+      <div>${description}</div>
+      <div>${age(notifiedTime)}</div>
+    </a>
+  </li>
+`;
 }
 
 function age(date: Date): string {
