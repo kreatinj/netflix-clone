@@ -1,3 +1,4 @@
+import "./index.css";
 import netflixLogo from "/assets/header/netflix-logo.svg?raw";
 import searchIcon from "/assets/header/search-icon.svg?raw";
 import notificationIcon from "/assets/header/notification-icon.svg?raw";

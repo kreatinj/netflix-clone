@@ -1,5 +1,4 @@
-// import './index.css';
-// import notifications from './notifications.json' assert { type: 'json' };
+import './index.css';
 import { loadJson } from '~/helpers/load-json';
 import Item from './item';
 
