@@ -1,14 +1,17 @@
 import "./global.css";
-import Footer from "~/components/footer";
-import Header from "~/components/header";
 import LoadingSpinner from "./components/loading-spinner";
-import Main from "~/components/main";
-import handleModal from "./events/handleModal";
-import handleSlider from "./events/handleSlider";
 
 const appElement = document.querySelector<HTMLDivElement>('#app')!;
 
 appElement.innerHTML = LoadingSpinner();
+
+const [Footer, Header, Main, handleModal, handleSlider] = await Promise.all([
+  import("~/components/footer").then(module => module.default),
+  import("~/components/header").then(module => module.default),
+  import("~/components/main").then(module => module.default),
+  import("~/events/handleModal").then(module => module.default),
+  import("~/events/handleSlider").then(module => module.default),
+]);
 
 const [header, main] = await Promise.all([Header(), Main()]);
 appElement.innerHTML = `
