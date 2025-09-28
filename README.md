@@ -20,6 +20,5 @@
   - [x] fetch로 데이터 불러오기
   - [x] 불러오는 동안 loading spinner 보여주기
     - [x] loading spinner는 css로 구현
-- [ ] 좋아요 + 찜하기 기능 개발
-  - [ ] id와 좋아요 상태 저장
-    - [ ] `상태를 javascript runtime에 저장` or ~`상태를 localStorage에 저장`~ or ~`json을 수정하는 서버 개발`~
+- [x] 좋아요 + ~찜하기~ 기능 개발
+  - [x] `상태를 javascript runtime에 저장` or ~`상태를 localStorage에 저장`~ or ~`json을 수정하는 서버 개발`~
