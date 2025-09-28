@@ -1,11 +1,12 @@
 import "./index.css";
-import netflixLogo from "/assets/header/netflix-logo.svg?raw";
-import searchIcon from "/assets/header/search-icon.svg?raw";
-import notificationIcon from "/assets/header/notification-icon.svg?raw";
-import profileIcon from "/assets/header/profile-icon.png";
 import Menu from "./menu";
 import Notifications from "./notifications";
 import Profile from "./profile";
+
+import netflixLogo from "/assets/header/netflix-logo.svg?raw";
+import notificationIcon from "/assets/header/notification-icon.svg?raw";
+import profileIcon from "/assets/header/profile-icon.png";
+import searchIcon from "/assets/header/search-icon.svg?raw";
 
 export default async function Header() {
   const notifications = await Notifications();

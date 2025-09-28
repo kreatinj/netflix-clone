@@ -1,12 +1,13 @@
 import './index.css';
 import { loadJson } from '~/helpers/loadJson';
+
 import Item from './item';
 
 const notificationsPromise = loadJson<{
-  id: number;
-  title: string;
   description: string;
+  id: number;
   notifiedTime: string;
+  title: string;
 }[]>("/data/notifications.json");
 
 export default async function Notifications() {

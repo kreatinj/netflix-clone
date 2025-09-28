@@ -2,7 +2,7 @@
 
 넷플릭스 클론 프로젝트
 
-# 체크포인트
+## 체크포인트
 
 - [x] vite 마이그레이션 (vanilla js + typescript)
   - [x] header

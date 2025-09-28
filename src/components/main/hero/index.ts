@@ -1,7 +1,8 @@
 import "./index.css";
-import playIcon from "/assets/main/play.svg?raw";
-import infoIcon from "/assets/main/info.svg?raw";
+
 import billboardTitle from "/assets/main/billboard-title.png";
+import infoIcon from "/assets/main/info.svg?raw";
+import playIcon from "/assets/main/play.svg?raw";
 
 export default function Hero() {
   return `

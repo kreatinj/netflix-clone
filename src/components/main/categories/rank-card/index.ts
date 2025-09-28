@@ -7,7 +7,7 @@ export type RankItem = {
 
 type Prop = {
   item: RankItem;
-  type: "series" | "movies";
+  type: "movies" | "series";
 };
 
 export default function RankCard({ item, type }: Prop) {

@@ -1,5 +1,5 @@
-import LikeOutlined from '/assets/main/like-outlined.svg?raw';
 import LikeFilled from '/assets/main/like-filled.svg?raw';
+import LikeOutlined from '/assets/main/like-outlined.svg?raw';
 
 export default function handleLike(like: Element) {
   const button = like.querySelector(".like-button")!;

@@ -2,12 +2,12 @@ import './index.css';
 import PageIndicator from './page-indicator';
 
 type Props<T> = {
-  items: T[];
   itemRenderer: (item: T) => string;
+  items: T[];
   pageSize: number;
 };
 
-export default function Carousel<T>({ items, itemRenderer, pageSize }: Props<T>) {
+export default function Carousel<T>({ itemRenderer, items, pageSize }: Props<T>) {
   return `
   <div class="carousel">
     ${PageIndicator({ pageSize, totalItems: items.length })}

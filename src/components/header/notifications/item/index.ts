@@ -1,13 +1,13 @@
 import './index.css';
 
 type Props = {
-  id: number;
-  title: string;
   description: string;
+  id: number;
   notifiedTime: Date;
+  title: string;
 }
 
-export default function Item({ id, title, description, notifiedTime }: Props) {
+export default function Item({ description, id, notifiedTime, title }: Props) {
   const img = `/assets/header/notifications/${id}.png`;
   return `
   <li class="notification-item">
