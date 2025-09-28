@@ -1,5 +1,6 @@
 import "./index.css";
 import { loadJson } from '~/helpers/loadJson';
+import Carousel from "./carousel";
 import RankCard, { type RankItem } from './rank-card';
 import RegularCard, { type Item } from './regular-card';
 
@@ -20,47 +21,17 @@ export default async function Categories() {
     <section class="rank">
       <h2>오늘 대한민국의 TOP 10 시리즈</h2>
       
-      <div class="slider">
-        <button class="left" aria-label="왼쪽으로 이동">
-          <b><</b>
-        </button>
-        <ol>
-          ${top10Series.map((item) => RankCard({ item, type: "series" })).join("")}
-        </ol>
-        <button class="right" aria-label="왼쪽으로 이동">
-          <b>></b>
-        </button>
-      </div>
+      ${Carousel({ children: top10Series.map((item) => RankCard({ item, type: "series" })) })}
     </section>
     <section class="regular">
       <h2>넷플릭스에 새로 올라온 콘텐츠</h2>
       
-      <div class="slider">
-        <button class="left" aria-label="왼쪽으로 이동">
-          <b><</b>
-        </button>
-        <ol>
-          ${newContents.map((item) => RegularCard({ item })).join("")}
-        </ol>
-        <button class="right" aria-label="왼쪽으로 이동">
-          <b>></b>
-        </button>
-      </div>
+      ${Carousel({ children: newContents.map((item) => RegularCard({ item })) })}
     </section>
     <section class="rank">
       <h2>오늘 대한민국의 TOP 10 영화</h2>
       
-      <div class="slider">
-        <button class="left" aria-label="왼쪽으로 이동">
-          <b><</b>
-        </button>
-        <ol>
-          ${top10Movies.map((item) => RankCard({ item, type: "movies" })).join("")}
-        </ol>
-        <button class="right" aria-label="왼쪽으로 이동">
-          <b>></b>
-        </button>
-      </div>
+      ${Carousel({ children: top10Movies.map((item) => RankCard({ item, type: "movies" })) })}
     </section>
   </section>
 `
