@@ -1,22 +1,27 @@
 import './index.css';
+import PageIndicator from './page-indicator';
 
-type Props = {
-  children?: string | string[];
-}
+type Props<T> = {
+  items: T[];
+  itemRenderer: (item: T) => string;
+  pageSize: number;
+};
 
-export default function Carousel({ children }: Props) {
-  const items = Array.isArray(children) ? children.join("") : (children ?? '');
+export default function Carousel<T>({ items, itemRenderer, pageSize }: Props<T>) {
   return `
   <div class="carousel">
-    <button class="left" aria-label="왼쪽으로 이동">
-      <b><</b>
-    </button>
-    <ol>
-      ${items}
-    </ol>
-    <button class="right" aria-label="왼쪽으로 이동">
-      <b>></b>
-    </button>
+    ${PageIndicator({ pageSize, totalItems: items.length })}
+    <div class="slider">
+      <button class="left" aria-label="왼쪽으로 이동">
+        <b><</b>
+      </button>
+      <ol>
+        ${items.map(itemRenderer).join("")}
+      </ol>
+      <button class="right" aria-label="오른쪽으로 이동">
+        <b>></b>
+      </button>
+    </div>
   </div>
   `;
 }

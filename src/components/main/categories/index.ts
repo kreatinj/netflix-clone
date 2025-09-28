@@ -20,15 +20,27 @@ export default async function Categories() {
   <section class="categories">
     <section class="rank">
       <h2>오늘 대한민국의 TOP 10 시리즈</h2>
-      ${Carousel({ children: top10Series.map((item) => RankCard({ item, type: "series" })) })}
+      ${Carousel({
+        items: top10Series,
+        itemRenderer: (item) => RankCard({ item, type: "series" }),
+        pageSize: 5,
+      })}
     </section>
     <section class="regular">
       <h2>넷플릭스에 새로 올라온 콘텐츠</h2>
-      ${Carousel({ children: newContents.map((item) => RegularCard({ item })) })}
+      ${Carousel({
+        items: newContents,
+        itemRenderer: (item) => RegularCard({ item }),
+        pageSize: 5,
+      })}
     </section>
     <section class="rank">
       <h2>오늘 대한민국의 TOP 10 영화</h2>
-      ${Carousel({ children: top10Movies.map((item) => RankCard({ item, type: "movies" })) })}
+      ${Carousel({
+        items: top10Movies,
+        itemRenderer: (item) => RankCard({ item, type: "movies" }),
+        pageSize: 5,
+      })}
     </section>
   </section>
 `
