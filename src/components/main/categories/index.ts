@@ -39,9 +39,9 @@ export default async function Categories() {
         <button class="left" aria-label="왼쪽으로 이동">
           <b><</b>
         </button>
-        <ul>
+        <ol>
           ${newContents.map((item) => RegularCard({ item })).join("")}
-        </ul>
+        </ol>
         <button class="right" aria-label="왼쪽으로 이동">
           <b>></b>
         </button>

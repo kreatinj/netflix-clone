@@ -12,8 +12,8 @@ const notificationsPromise = loadJson<{
 export default async function Notifications() {
   const notifications = await notificationsPromise;
   return `
-  <ul class="notifications-container">
+  <ol class="notifications-container">
     ${notifications.map((item) => Item({ ...item, notifiedTime: new Date(item.notifiedTime) })).join("")}
-  </ul>
+  </ol>
 `;
 }

@@ -1,5 +1,5 @@
 export default function handleSlider(slider: Element) {
-  const list = slider.querySelector("ol, ul")!;
+  const list = slider.querySelector("ol")!;
   const items = Array.from(list.querySelectorAll("li"));
   const leftButton = slider.querySelector("button.left")!;
   const rightButton = slider.querySelector("button.right")!;
