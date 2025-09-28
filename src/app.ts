@@ -1,7 +1,7 @@
 import "./global.css";
 import LoadingSpinner from "~/components/loading-spinner";
 
-const appElement = document.querySelector<HTMLDivElement>('#app')!;
+const appElement = document.querySelector<HTMLDivElement>('div#app')!;
 
 appElement.innerHTML = LoadingSpinner();
 
