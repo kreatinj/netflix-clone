@@ -9,7 +9,6 @@
     padding: 0 40px;
 }
 
-.categories ol, .categories ul {
+.categories ol {
     display: flex;
-    transition: transform 0.5s ease-in-out;
 }
