@@ -1,5 +1,5 @@
 import "./global.css";
-import LoadingSpinner from "./components/loading-spinner";
+import LoadingSpinner from "~/components/loading-spinner";
 
 const appElement = document.querySelector<HTMLDivElement>('#app')!;
 
