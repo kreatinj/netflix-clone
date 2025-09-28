@@ -1,5 +1,6 @@
 import "./index.css";
 import { loadJson } from '~/helpers/loadJson';
+import CardContainer from "./card-container";
 import Carousel from "./carousel";
 import RankCard, { type RankItem } from './rank-card';
 import RegularCard, { type Item } from './regular-card';
@@ -22,7 +23,7 @@ export default async function Categories() {
       <h2>오늘 대한민국의 TOP 10 시리즈</h2>
       ${Carousel({
         items: top10Series,
-        itemRenderer: (item) => RankCard({ item, type: "series" }),
+        itemRenderer: (item) => CardContainer({ children: RankCard({ item, type: "series" }) }),
         pageSize: 5,
       })}
     </section>
@@ -30,7 +31,7 @@ export default async function Categories() {
       <h2>넷플릭스에 새로 올라온 콘텐츠</h2>
       ${Carousel({
         items: newContents,
-        itemRenderer: (item) => RegularCard({ item }),
+        itemRenderer: (item) => CardContainer({ children: RegularCard({ item }) }),
         pageSize: 5,
       })}
     </section>
@@ -38,7 +39,7 @@ export default async function Categories() {
       <h2>오늘 대한민국의 TOP 10 영화</h2>
       ${Carousel({
         items: top10Movies,
-        itemRenderer: (item) => RankCard({ item, type: "movies" }),
+        itemRenderer: (item) => CardContainer({ children: RankCard({ item, type: "movies" }) }),
         pageSize: 5,
       })}
     </section>

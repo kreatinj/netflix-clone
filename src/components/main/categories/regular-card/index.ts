@@ -11,10 +11,8 @@ type Prop = {
 
 export default function RegularCard({ item }: Prop) {
   return `
-  <li class="regular-card">
-    <a href="#">
-      <img class="item" src="assets/main/new/${item.id}.png" alt="${item.title}">
-    </a>
-  </li>
+  <a class="regular-card" href="#">
+    <img class="item" src="assets/main/new/${item.id}.png" alt="${item.title}">
+  </a>
 `;
 }
