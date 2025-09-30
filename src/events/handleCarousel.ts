@@ -41,6 +41,7 @@ export default function handleCarousel(slider: Element) {
     } else {
       currentItem -= (currentItem % totalItems) % itemsPerScreen;
     }
+    currentItem = Math.max(currentItem, 0);
     slide();
     updatePageIndicator();
   });
@@ -52,6 +53,7 @@ export default function handleCarousel(slider: Element) {
     } else {
       currentItem += totalItems % itemsPerScreen;
     }
+    currentItem = Math.min(currentItem, totalItems * 3 - itemsPerScreen);
     slide();
     updatePageIndicator();
   });
