@@ -1,10 +1,10 @@
-export default function handleModal(modal: Element) {
-  const menu = modal.querySelector(".menu")!;
-  modal.addEventListener("pointerenter", () => {
+export default function handleModal(modalContainer: Element) {
+  const menu = modalContainer.querySelector(".menu")!;
+  modalContainer.addEventListener("pointerenter", () => {
     menu.classList.add("active");
   });
 
-  modal.addEventListener("pointerleave", () => {
+  modalContainer.addEventListener("pointerleave", () => {
     menu.classList.remove("active");
   });
 }
