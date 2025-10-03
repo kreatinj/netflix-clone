@@ -16,12 +16,9 @@ export default function handleSearch(searchContainer: Element) {
     fetch('http://localhost:3001/api/search?q=' + encodeURIComponent(query))
       .then(response => response.json())
       .then(data => {
-        dataList.innerHTML = "";
-        data.items.forEach((item: string) => {
-          const option = document.createElement("option");
-          option.value = item;
-          dataList.appendChild(option);
-        });
+        dataList.innerHTML = data.items.map(
+          (item: string) => `<option value="${item}"></option>`
+        ).join("");
       });
   });
 
