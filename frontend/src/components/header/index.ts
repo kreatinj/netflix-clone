@@ -30,8 +30,9 @@ export default async function Header() {
         </ul>
       </div>
       <ul class="nav-right">
-        <li>
+        <li class="search-container">
           <a href="#">${searchIcon}</a>
+          <input class="search-input" type="text" placeholder="제목, 인물, 장르 검색" />
         </li>
         <li class="modal-container">
           <a href="#">${notificationIcon}</a>
