@@ -8,7 +8,7 @@ const notificationsPromise = loadJson<{
   id: number;
   notifiedTime: string;
   title: string;
-}[]>("/data/notifications.json");
+}[]>("/api/notifications");
 
 export default async function Notifications() {
   const notifications = await notificationsPromise;

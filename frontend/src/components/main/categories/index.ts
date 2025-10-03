@@ -7,9 +7,9 @@ import RankCard, { type RankItem } from './rank-card';
 import RegularCard, { type Item } from './regular-card';
 
 
-const top10SeriesPromise = loadJson<RankItem[]>("/data/top10-series.json");
-const newContentsPromise = loadJson<Item[]>("/data/new-contents.json");
-const top10MoviesPromise = loadJson<RankItem[]>("/data/top10-movies.json");
+const top10SeriesPromise = loadJson<RankItem[]>("/api/top10-series");
+const newContentsPromise = loadJson<Item[]>("/api/new-contents");
+const top10MoviesPromise = loadJson<RankItem[]>("/api/top10-movies");
 
 export default async function Categories() {
   const [top10Series, newContents, top10Movies] = await Promise.all([

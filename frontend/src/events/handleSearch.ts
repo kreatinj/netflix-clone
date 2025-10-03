@@ -1,4 +1,5 @@
 import { debounce } from "~/helpers/debounce";
+import { loadJson } from "~/helpers/loadJson";
 
 export default function handleSearch(searchContainer: Element) {
   const input = searchContainer.querySelector<HTMLInputElement>("input.search-input")!;
@@ -13,8 +14,7 @@ export default function handleSearch(searchContainer: Element) {
 
   const dataList = searchContainer.querySelector<HTMLDataListElement>("datalist#search-datalist")!;
   const search = debounce((query: string) => {
-    fetch('http://localhost:3001/api/search?q=' + encodeURIComponent(query))
-      .then(response => response.json())
+    loadJson<{ items: string[] }>("/api/search?q=" + encodeURIComponent(query))
       .then(data => {
         if (!query)
           dataList.innerHTML = "";
