@@ -32,7 +32,16 @@ export default async function Header() {
       <ul class="nav-right">
         <li class="search-container">
           <a href="#">${searchIcon}</a>
-          <input class="search-input" type="text" placeholder="제목, 인물, 장르 검색" list="search-datalist" />
+          <form>
+            <input
+              class="search-input"
+              type="text"
+              placeholder="제목, 인물, 장르 검색"
+              list="search-datalist"
+              autocomplete="on"
+              name="search-input"
+            />
+          </form>
           <datalist id="search-datalist"></datalist>
         </li>
         <li class="modal-container">
