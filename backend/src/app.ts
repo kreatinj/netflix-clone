@@ -1,12 +1,13 @@
-import express, { Router } from "express";
 import cors from "cors";
+import express, { Router } from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import searchWords from "../data/search-words.json" with { type: "json" };
-import top10Series from "../data/top10-series.json" with { type: "json" };
+
 import newContents from "../data/new-contents.json" with { type: "json" };
-import top10Movies from "../data/top10-movies.json" with { type: "json" };
 import notifications from "../data/notifications.json" with { type: "json" };
+import searchWords from "../data/search-words.json" with { type: "json" };
+import top10Movies from "../data/top10-movies.json" with { type: "json" };
+import top10Series from "../data/top10-series.json" with { type: "json" };
 
 const app = express();
 const PORT = 3001;
