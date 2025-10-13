@@ -21,25 +21,30 @@ app.use(express.json());  // JSON 파싱
 
 const router = Router();
 
-router.get("/search", (req, res) => {
+router.get("/search", async (req, res) => {
+  await delay(1000);
   const q = req.query.q?.toString().toLowerCase() || "";
   const items = searchWords.filter(word => word.split(" ").some(part => part.toLowerCase().startsWith(q)));
   res.json({ items, total: items.length });
 });
 
-router.get("/top10-series", (req, res) => {
+router.get("/top10-series", async (_req, res) => {
+  await delay(1000);
   res.json(top10Series);
 });
 
-router.get("/new-contents", (req, res) => {
+router.get("/new-contents", async (_req, res) => {
+  await delay(1000);
   res.json(newContents);
 });
 
-router.get("/top10-movies", (req, res) => {
+router.get("/top10-movies", async (_req, res) => {
+  await delay(1000);
   res.json(top10Movies);
 });
 
-router.get("/notifications", (req, res) => {
+router.get("/notifications", async (_req, res) => {
+  await delay(1000);
   res.json(notifications);
 });
 
@@ -48,3 +53,7 @@ app.use("/api", router);
 app.listen(PORT, () => {
   console.log(` Server on http://localhost:${PORT}`);
 });
+
+function delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
